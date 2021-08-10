@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/more', (req, res) =>{
-	res.render('more');
+	res.render('more'); 
 })
 
 app.listen( port, () => { //start app 
