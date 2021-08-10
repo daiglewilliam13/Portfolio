@@ -16,5 +16,5 @@ app.get('/more', (req, res) =>{
 })
 
 app.listen( port, () => { //start app
-	console.log(`App Started and listening on ${port}`);
+	console.log(`App Started and listening on ${port}`); //Backticks necessary instead of '' so the port variable is correctly displayed
 });
