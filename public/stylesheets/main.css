@@ -3,8 +3,21 @@ html body {
 	background-color: #10002b;
 	font-family: 'Lexend', sans-serif;
 	color: #dad5e1;
+	text-shadow: .1rem .1rem 1rem black;
 }
 
+.header h1 {
+	font-size: 7rem;
+}
+
+.about-me h2 {
+	font-size: 4rem;
+}
+
+.about-me p{
+	font-weight: 300;
+	font-style: italic;
+}
 a {
 	color: #f72585;
 }
