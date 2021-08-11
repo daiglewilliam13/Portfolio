@@ -8,3 +8,5 @@ node_modules/
 .env
 goorm.manifest
 README.md
+key.pem
+cert.pem
