@@ -1,5 +1,5 @@
 html body {
-	margin: 3rem 3rem;
+	margin: 3rem 4rem;
 	background-color: #10002b;
 	font-family: 'Lexend', sans-serif;
 	color: #dad5e1;
@@ -8,17 +8,45 @@ html body {
 
 .header h1 {
 	font-size: 7rem;
+	margin: 5rem 0 5rem 0;
 }
 
 .about-me h2 {
 	font-size: 4rem;
+	margin: 0; 
+}
+
+.about-me h4{
+	margin:0;
 }
 
 .about-me p{
+	margin: 2rem 0 0 0;
 	font-weight: 300;
 	font-style: italic;
+	font-size: 2rem;
 }
+
+.card-samples {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card-samples div {
+	display: block;
+	width: 80%;
+	margin: 2rem 0;
+	font-size: 2rem;
+}
+
 a {
 	color: #f72585;
+}
+
+footer p{
+	text-align: center;
+	margin: 0;
+	padding: 1rem;
+	font-size: .8rem;
 }
 
