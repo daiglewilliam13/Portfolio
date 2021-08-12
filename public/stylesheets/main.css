@@ -34,13 +34,59 @@ html body {
 
 .card-samples div {
 	display: block;
-	width: 80%;
-	margin: 2rem 0;
+	width: 100%;
 	font-size: 2rem;
+}
+
+.website-card{
+	text-align:center;
+	position: relative;
+}
+
+.website-card img{
+	width: 100%;
+	transition: .2s;
+}
+
+.hover-card{
+	background-color:black;
+}
+
+.website-card:hover .hover-card img {
+	opacity: .08;
+	transition: .2s;
+}
+
+.website-card a .top-text {
+	top: 0;
+	position: relative;
+	transition: .2s;
+}
+
+.website-card:hover a .top-text{
+	top: 15rem;
+	transition: .2s;
+}
+
+.website-card a .hidden-text {
+	bottom: 0;
+	left: 25%;
+	right: 25%;
+	position: absolute;
+	transition: .2s;
+	margin:0;
+	opacity: 0;
+}
+
+.website-card:hover a .hidden-text{
+	bottom: 25%;
+	transition: .3s;
+	opacity: 1;
 }
 
 a {
 	color: #f72585;
+	text-decoration:none;
 }
 
 footer p{
