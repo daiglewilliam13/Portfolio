@@ -7,8 +7,7 @@ html body {
 }
 
 #starry-background {
-	width: 110%;
-    height: 110%;
+	
     position: fixed;
     top: 0;
     display: block;
