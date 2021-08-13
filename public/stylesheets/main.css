@@ -6,6 +6,16 @@ html body {
 	text-shadow: .1rem .1rem 1rem black;
 }
 
+#starry-background {
+	width: 110%;
+    height: 110%;
+    position: fixed;
+    top: 0;
+    display: block;
+    left: 0;
+    z-index: -999;
+}
+
 .header h1 {
 	font-size: 7rem;
 	margin: 5rem 0 5rem 0;
@@ -41,11 +51,13 @@ html body {
 .website-card{
 	text-align:center;
 	position: relative;
+	margin: 2rem 0 0 0;
 }
 
 .website-card img{
 	width: 100%;
 	transition: .2s;
+	display:block;
 }
 
 .hover-card{
@@ -64,8 +76,8 @@ html body {
 }
 
 .website-card:hover a .top-text{
-	top: 15rem;
-	transition: .2s;
+	top: 35%;
+	transition: .3s;
 }
 
 .website-card a .hidden-text {
@@ -80,7 +92,7 @@ html body {
 
 .website-card:hover a .hidden-text{
 	bottom: 25%;
-	transition: .3s;
+	transition: .5s;
 	opacity: 1;
 }
 
@@ -95,4 +107,6 @@ footer p{
 	padding: 1rem;
 	font-size: .8rem;
 }
+
+
 
