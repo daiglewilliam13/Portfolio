@@ -15,9 +15,25 @@ html body {
     z-index: -999;
 }
 
+
 .header h1 {
-	font-size: 7rem;
-	margin: 5rem 0 5rem 0;
+	font-size: 6rem;
+	margin: 7rem auto;
+	display: inline-block;
+}
+
+.header {
+	display: flex;
+	
+}
+#selfie {
+	min-width: 15rem;
+	min-height: 15rem;
+	display: inline-block;
+	margin: auto 10%;
+	background: url('../images/unnamed.jpg');
+	background-size: 100%;
+	border-radius: 50%;
 }
 
 .about-me h2 {
@@ -42,15 +58,16 @@ html body {
 }
 
 .card-samples div {
-	display: block;
-	width: 100%;
-	font-size: 2rem;
+
 }
 
 .website-card{
 	text-align:center;
 	position: relative;
 	margin: 2rem 0 0 0;
+	display: block;
+	width: 100%;
+	font-size: 2rem;
 }
 
 .website-card img{
