@@ -1,9 +1,10 @@
 html body {
-	margin: 3rem 4rem;
+	margin: 3rem 2rem;
 	background-color: #10002b;
 	font-family: 'Lexend', sans-serif;
 	color: #dad5e1;
 	text-shadow: .1rem .1rem 1rem black;
+	box-sizing:border-box;
 }
 
 #starry-background {
@@ -17,28 +18,35 @@ html body {
 
 
 .header h1 {
-	font-size: 6rem;
-	margin: 7rem auto;
-	display: inline-block;
+	margin: 2rem 0 1rem 0;
+	display: block;
+	width:100%;
+	text-align: center;
+	animation: 1s fade-in;
+	transition: .2s;
 }
 
 .header {
 	display: flex;
+	flex-wrap: wrap;
+	width:100%;
 	
 }
-#selfie {
-	min-width: 15rem;
-	min-height: 15rem;
-	display: inline-block;
-	margin: auto 10%;
-	background: url('../images/unnamed.jpg');
-	background-size: 100%;
-	border-radius: 50%;
+
+#line-break {
+	width:75%;
+	margin: 0 auto;
+}
+
+
+.about-me {
+	margin: 2rem 0 0 0;
 }
 
 .about-me h2 {
-	font-size: 4rem;
-	margin: 0; 
+	font-size: 1.25rem;
+	margin: 2rem 0 0 0;
+	transition:.2s;
 }
 
 .about-me h4{
@@ -49,25 +57,22 @@ html body {
 	margin: 2rem 0 0 0;
 	font-weight: 300;
 	font-style: italic;
-	font-size: 2rem;
 }
 
 .card-samples {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content:center;
 }
 
-.card-samples div {
-
-}
 
 .website-card{
 	text-align:center;
 	position: relative;
-	margin: 2rem 0 0 0;
+	margin: 0 0 2rem 0;
 	display: block;
 	width: 100%;
-	font-size: 2rem;
+	transition: .2s;
 }
 
 .website-card img{
@@ -78,6 +83,13 @@ html body {
 
 .hover-card{
 	background-color:black;
+	transition:.3s;
+
+}
+
+.hover-card:hover {
+		box-shadow: 0px 0px 2rem #dad5e1;
+		transition:.3s;
 }
 
 .website-card:hover .hover-card img {
@@ -89,11 +101,13 @@ html body {
 	top: 0;
 	position: relative;
 	transition: .2s;
+	height: 3rem;
 }
 
 .website-card:hover a .top-text{
 	top: 35%;
 	transition: .3s;
+
 }
 
 .website-card a .hidden-text {
@@ -117,6 +131,10 @@ a {
 	text-decoration:none;
 }
 
+footer hr {
+	width: 70%;
+}
+
 footer p{
 	text-align: center;
 	margin: 0;
@@ -124,5 +142,51 @@ footer p{
 	font-size: .8rem;
 }
 
+
+/* animations */
+
+@keyframes fade-in {
+	
+	from {
+		opacity: 0;
+		margin-left: -10%;
+	} to {
+		opacity: 1;
+		margin-left: 0%;
+	}
+}
+
+
+/* desktop styling */
+
+@media (min-width: 765px){
+	
+	.website-card {
+		width: 30%;
+		margin: 5% 10%;
+	}
+	
+	.header h1 {
+		font-size: 4rem;
+		transition: .2s;
+	}
+	
+	.about-me{
+		margin: 0 20%;
+		text-align:center;
+		transition: .2s;
+		font-size: 1.25rem;
+	}
+	.about-me h2 {
+		font-size: 2rem;
+		transition: .2s
+	}
+	
+	ul li {
+		list-style:none;
+	}
+	
+	
+}
 
 

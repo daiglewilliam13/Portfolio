@@ -1,7 +1,7 @@
 const canvas = document.getElementById('starry-background');
 const ctx = canvas.getContext('2d');
 
-	canvas.width = window.innerWidth*3; // sets canvas dimensions to three times brower window to prevent scaling issues when the browswer is resized
+	canvas.width = window.innerWidth*3; // sets canvas dimensions to double browser window to prevent scaling issues when the browswer is resized
 	canvas.height = window.innerHeight*3;
 	let width = canvas.width; //define borders for stars
 	let height = canvas.height;
@@ -26,7 +26,7 @@ function getRandomInt(max) {
 
 
 
-const numberOfStars = 5000;
+const numberOfStars = 1000;
 const stars = [];
 const starSpeed = 0.05 * canvas.width;
 const xv = starSpeed * randomSign() * Math.random(); // make stars move same direction
