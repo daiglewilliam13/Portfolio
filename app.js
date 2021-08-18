@@ -17,6 +17,6 @@ app.get('/more', (req, res) =>{
 })
 
 
-app.listen( 3000 || port, () => { //start app 
+app.listen( process.env.PORT || 3000, () => { //start app 
 	console.log(`App Started and listening on ${port}`); //Backticks necessary instead of '' so the port variable is correctly displayed
 });
