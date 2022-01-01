@@ -1,105 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="/stylesheets/main.css">
-	<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500&display=swap" rel="stylesheet"> 
-</head>
-
-<body>
-<canvas id="starry-background">
-</canvas>
-<div class="wrapper">
-	<div class= "header">
-			<h1>Welcome!</h1>
-			<div id="line-break">
-				<hr>
-			</div>
-	</div>
-	<div class="about-me">
-		<h2>
-			William "Mickey" Daigle
-		</h2>
-		<h4>
-			A [ full-stack ] Web-Developer.
-		</h4>
-		<p>
-			Approx. three years experience specializing in:
-			<ul>
-				<li>
-					Node.js/Express web-apps
-				</li>
-				<li>
-					Javascript/CSS/HTML
-				</li>
-				<li>
-					Non-Relational Databases (MongoDB)
-				</li>
-				<li>
-					CMS (WordPress, Shopify)
-				</li>
-				<li>
-					Frameworks (Bootstrap, Angular)
-				</li>
-				<li>
-					Libraries (React, JQuery)
-				</li>
-				<li>
-					<a href="/more">More information here...</a>
-				</li>
-		</ul>
-		</p>
-		<p>
-			Here are some samples of my work:
-		</p>
-	</div>
-	<div>
-		<div class="card-samples">
-			<div class="website-card">
-			
-				<a href="https://enigmatic-tundra-08092.herokuapp.com" target="_blank">
-					<p class="top-text">
-						A yelp clone using Bootstrap
-					</p>
-					<p class="hidden-text">
-						Check it out!
-					</p>
-				<div class="hover-card">
-					<img src ="./images/yelpCamp.png">
-				</div>
-				</a>	
-			</div>
-			<div class="website-card">
-				<a href="https://www.flavortheory.me" target="_blank">
-					<p class="top-text">
-						A Blogging website with remote image hosting (GCP)
-					</p>
-					<p class="hidden-text">
-						Check it out!
-					</p>
-				<div class="hover-card">
-					<img src ="./images/flavorTheory.png">
-				</div>	
-				</a>
-			</div>
-			<div class="website-card">
-				<a href="https://codepen.io/daiglewilliam13" target="_blank">My CodePen</a>
-			</div>
-		</div>
-	</div>
-	<footer>
+<%- include("partials/header") %>
+	<body>
+		<%- include("partials/landing") %>
+		<%- include("partials/navbar") %>
+		<%- include("partials/about-me") %>
 		<hr>
-		<p>
-		©2021 William "Mickey" Daigle <a href="https://github.com/daiglewilliam13" target="_blank">github</a>
-		</p>
-	</footer>
-</div>
-<script src="./js/main.js"></script>
-</body>
-
+		<%- include("partials/work") %>
+		<hr>
+		<%- include("partials/contact") %>
+		<%- include("partials/footer") %>
+	</body>
 </html>

@@ -1,0 +1,35 @@
+<section id="contact">
+	<div id="contact-header">
+		<p>Contact Me:</p>
+		<p>Automatically sends an email to daiglewilliam13@gmail.com</p>
+	</div>
+	<div id="contact-form-wrapper">
+		<form id="contact-form" onsubmit="return false">
+		<label for="name">Your Name:</label>
+		<br>
+		<input required class="input-field" type="text" id="name" name="name">
+		<br>
+		<label for="email">Your Email:</label>
+		<br>
+		<input required class="input-field" type="text" id="email" name="email">
+		<br>
+		<label for="topic">Topic of Interest:</label>
+		<br>
+		<select id="topic" class="input-field" name="topic">
+			<option value="web-development">Web Development</option>
+			<option value="Shop Themes">Customized Shop Themes</option>
+			<option value="WYSIWYG">Wordpress/WYSIWYG</option>
+			<option value="Other">Other</option>
+		</select>
+		<br>
+		<label for="message">Your Message:</label>
+		<br>
+		<textarea required class="input-field" id="message-input"></textarea>
+		<br>
+		<div id="message-box">	
+		<button id="send-message-button">Send Message</button>
+		</div>
+		</form>
+		<p id="res-message"></p>
+	</div>
+</section>
