@@ -1,4 +1,5 @@
 console.log('connected');
+
 const addActiveClass = (el) => {
 	el.classList.toggle('nav-button-active');
 };
@@ -286,7 +287,6 @@ landingBars.forEach((bar)=>{
 	let duration;
 	duration = Math.round(Math.random() * 5000 + 5000);
 	assignColorAnimation(bar, duration);
-	console.log(duration);
 	setTimeout(() => {
 		loop();
 	}, duration);

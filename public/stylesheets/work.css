@@ -1,0 +1,216 @@
+/* WORK SECTION */
+#work {
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+#testimonial-wrapper {
+	width: 100%;
+	height: 30vh;
+	padding: 5rem 10%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#quote-wrapper {
+	position: relative;
+}
+
+.quote {
+	position: absolute;
+	right: 200%;
+	width: 100%;
+	opacity: 0;
+}
+
+.quote p {
+	margin: 0;
+	font-size: 3rem;
+	font-weight: 300;
+	font-style: italic;
+	text-align: center;
+}
+
+#quoter-wrapper {
+	position: relative;
+	top: 5rem;
+}
+
+.quoter {
+	right: 200%;
+	position: absolute;
+	padding-right: 3rem;
+	width: 90%;
+	text-align: right;
+	opacity: 0;
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.slideAway {
+	animation: slideAway 1s ease-in forwards;
+}
+
+.slideIn {
+	animation: slideIn 4s linear forwards;
+}
+
+.slideInFaster {
+	animation: slideInFaster 4s linear forwards;
+}
+
+@keyframes slideAway {
+	0% {
+		right: 10%;
+		opacity: 1;
+	}
+	10% {
+		right: 25%;
+		opacity: 0;
+	}
+	100% {
+		right: 200%;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		right: -200%;
+	}
+	20% {
+		opacity: 0;
+	}
+	25% {
+		right: 0%;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		right: 10%;
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFaster {
+	0% {
+		right: -200%;
+	}
+	25% {
+		right: -10%;
+		opacity: 0;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		right: 10%;
+		opacity: 1;
+	}
+}
+
+#work-wrapper {
+	height: 65vh;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#position-card-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	height: 85%;
+	padding: 1rem 0 0 0;
+	position: relative;
+	overflow: hidden;
+}
+
+#display-card-wrapper {
+	z-index: 1;
+	position: absolute;
+	overflow-y: scroll;
+}
+#show-all-selector {
+	cursor: pointer;
+	background-color: #9f81cd;
+	color: white;
+	border: none;
+	border-radius: 2px;
+	padding: .2rem;
+}
+
+#selector-box{
+	position:relative;
+}
+.work-selector {
+	cursor: pointer;
+	transition: 0.3s;
+	padding: .2rem .5rem;
+	background-color: #9f81cd;
+	color: white;
+	border: none;
+	border-radius: 2px;
+	overflow:hidden;
+	font-size:1.2rem;
+}
+
+.work-selector:hover,
+#show-all-selector:hover {
+	transition: 0.5s;
+}
+.work-header {
+	width: 100%;
+	text-align: center;
+}
+
+.work-header p {
+	font-style:italic;
+	font-size: 1.2rem;
+	font-weight: 300;
+	margin:0;
+}
+
+.position-card {
+	width: 10rem;
+	margin: 1.5rem;
+	height: 10rem;
+	opacity: 0;
+}
+
+.work-display-card {
+	position: absolute;
+	background-color: red;
+	transition: 0.2s;
+}
+
+img.work-image {
+	object-fit: contain;
+	height: 100%;
+	width: 100%;
+}
+
+.work-display-card:hover {
+	transform: scale(1.1);
+	transition: 0.5s;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px grey;
+}
+
+.hidden-card {
+	background-color: red;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	border: none;
+	margin: 0;
+	visibility: hidden;
+	transition: 0.3s;
+	position: absolute;
+	opacity: 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.skill-card::-webkit-scrollbar {
+	display: none;
+}

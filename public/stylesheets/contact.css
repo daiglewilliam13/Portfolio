@@ -1,0 +1,107 @@
+/* CONTACT SECTION */
+
+input,
+textarea,
+select {
+	font-weight: 300;
+}
+
+#contact {
+	padding: 2rem 0 0 0;
+	height: 100%;
+	position: relative;
+	box-sizing:border-box;
+}
+
+#contact-header p:first-child {
+	font-size: 2rem;
+	font-weight: 300;
+	padding: 2rem 0 0 2rem;
+	text-decoration: underline;
+	margin: 0;
+}
+#contact-header p:nth-child(2) {
+	padding: 0 0 0 2rem;
+	font-weight: 300;
+	font-style: italic;
+}
+
+#contact-form-wrapper {
+	padding: 1rem 0 0 2rem;
+}
+
+.input-field {
+	border: none;
+	height: 2rem;
+	border-bottom: 3px solid #f198af;
+}
+
+.input-field:focus {
+	outline-color: #f198af;
+}
+
+#name,
+#email,
+#topic {
+	margin: 0 0 1rem 0;
+	margin: 0 0 1rem 0;
+	width: 50%;
+}
+
+#message-input {
+	width: 75%;
+	height: 15rem;
+}
+#message-box{
+	position:relative;
+}
+
+::selection {
+	background: #766dc1;
+	color: #fbd1d3;
+	border-radius: 3px;
+}
+
+.highlight::selection {
+	color: white;
+}
+
+::-moz-selection {
+	background: #766dc1;
+	color: #fbd1d3;
+	border-radius: 3px;
+}
+
+#send-message-button {
+	margin: 1rem 0 0 0;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	background-color: #9f81cd;
+	color: white;
+	border: none;
+	border-radius: 2px;
+	transition: 0.1s;
+	position: relative;
+	overflow: hidden;
+}
+
+span.ripple {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: ripple 0.6s ease-out;
+	background-color: #ebb2d6;
+}
+
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+
+
+#res-message {
+	margin: 1rem 0;
+	height: 1rem;
+}
