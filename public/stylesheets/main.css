@@ -23,10 +23,48 @@ a {
 	display: none;
 }
 
+button:hover,
+#send-message-button:hover {
+	color: #f198af;
+	transition: 0.3s;
+	cursor: pointer;
+}
 
+footer {
+	background-color: #9f81cd;
+	height: 3rem;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	border-top: 3px solid rgb(241, 152, 175);
+}
+
+footer p {
+	margin: 0;
+	padding: 0.5rem 0;
+	position: relative;
+	bottom: 0;
+}
+
+span.ripple {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: ripple 0.6s ease-out;
+	background-color: #ebb2d6;
+}
+
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
 
 /* NAVBAR */
 
+/* MOBILE STYLE */
 #navbar {
 	width: 100%;
 	background-color: #9f81cd;
@@ -41,13 +79,14 @@ a {
 
 #navbar ul {
 	display: flex;
-	margin: 0;
+	margin: auto;
 	height: 100%;
+	text-align: center;
 }
 
 #navbar ul li {
 	list-style: none;
-	padding: 0 0.5rem;
+	padding: 0 0.2rem;
 	transition: 0.3s;
 }
 
@@ -56,7 +95,7 @@ a {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
 	color: white;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	transition: 0.2s;
 }
 .nav-button-active {
@@ -65,24 +104,13 @@ a {
 	transition: 0.3s;
 }
 
-button:hover, #send-message-button:hover {
-	color: #f198af;
-	transition: 0.3s;
-	cursor:pointer;
+/* DESKTOP */
+@media screen and (min-width: 685px) {
+	#navbar ul li {
+		padding: 0 0.5rem;
+	}
+
+	.nav-button {
+		font-size: 1.5rem;
+	}
 }
-
-
-footer {
-	background-color: #9f81cd;
-	height:3rem;
-	position:relative;
-	bottom:0;
-	text-align:center;
-	border-top: 3px solid rgb(241, 152, 175);
-}
-
-footer p {
-	margin: 0;
-	padding: .5rem 0;
-}
-

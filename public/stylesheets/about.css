@@ -1,34 +1,33 @@
 /* ABOUT SECTION */
 
+/* MOBILE */
 #about {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
 }
 
 #about-me-header {
 	text-align: center;
 	margin: 3.5rem 0 0 0;
-	height: 10vh;
 }
 
 #about-me-header h1 {
 	margin: 0;
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 #triangle-card-wrapper {
 	display: flex;
-	justify-content: center;
+	flex-wrap: wrap;
+	justify-content:center;
 	width: 100%;
 	box-sizing: border-box;
-	margin: 2rem 0 0 0;
-	padding: 0 2rem;
-	max-height: 30vh;
+	margin: 1rem 0 0 0;
 }
 
 .triangle-card {
-	width: 25%;
+	width: 40%;
+	margin: 0 .5rem .5rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -41,10 +40,11 @@
 .triangle-down {
 	width: 0;
 	height: 0;
-	border-left: 4rem solid transparent;
-	border-right: 4rem solid transparent;
-	border-top: 6rem solid #9f81cd;
+	border-left: 3rem solid transparent;
+	border-right: 3rem solid transparent;
+	border-top: 5rem solid #9f81cd;
 	margin: 0;
+	transition: .2s;
 }
 
 .card-icon {
@@ -52,7 +52,7 @@
 	position: relative;
 	height: 0;
 	top: 0.8rem;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	color: white;
 }
 .card-header {
@@ -66,4 +66,78 @@
 #about hr {
 	width: 55%;
 	margin: 1rem auto;
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 685px) {
+	#about {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+	}
+
+	#about-me-header {
+		text-align: center;
+		margin: 3.5rem 0 0 0;
+		height: 10vh;
+	}
+
+	#about-me-header h1 {
+		margin: 0;
+		font-size: 2.5rem;
+	}
+
+	#triangle-card-wrapper {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+		width: 100%;
+		box-sizing: border-box;
+		margin: 2rem 0 0 0;
+		padding: 0 2rem;
+		max-height: 30vh;
+	}
+
+	.triangle-card {
+		width: 25%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.highlight {
+		color: #f198af;
+	}
+	.triangle-down {
+		width: 0;
+		height: 0;
+		border-left: 4rem solid transparent;
+		border-right: 4rem solid transparent;
+		border-top: 6rem solid #9f81cd;
+		margin: 0;
+		transition: .2s;
+	}
+
+	.card-icon {
+		z-index: 1;
+		position: relative;
+		height: 0;
+		top: 0.8rem;
+		font-size: 2.5rem;
+		color: white;
+	}
+	.card-header {
+		font-size: 1.2rem;
+	}
+
+	.card-subtext {
+		font-weight: 300;
+	}
+
+	#about hr {
+		width: 55%;
+		margin: 1rem auto;
+	}
 }

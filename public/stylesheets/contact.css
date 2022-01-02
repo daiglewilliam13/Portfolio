@@ -1,4 +1,5 @@
 /* CONTACT SECTION */
+/* MOBILE STYLE */
 
 input,
 textarea,
@@ -7,10 +8,10 @@ select {
 }
 
 #contact {
-	padding: 2rem 0 0 0;
-	height: 100%;
+	padding: 5rem 0 0 0;
 	position: relative;
 	box-sizing:border-box;
+	height: 100vh;
 }
 
 #contact-header p:first-child {
@@ -50,7 +51,7 @@ select {
 
 #message-input {
 	width: 75%;
-	height: 15rem;
+	height: 10rem;
 }
 #message-box{
 	position:relative;
@@ -85,23 +86,18 @@ select {
 	overflow: hidden;
 }
 
-span.ripple {
-	position: absolute;
-	border-radius: 50%;
-	transform: scale(0);
-	animation: ripple 0.6s ease-out;
-	background-color: #ebb2d6;
-}
-
-@keyframes ripple {
-	to {
-		transform: scale(4);
-		opacity: 0;
-	}
-}
-
 
 #res-message {
 	margin: 1rem 0;
 	height: 1rem;
+}
+
+
+/* DESKTOP STYLE */
+
+@media screen and (min-width:865px) {
+	#contact {
+	padding: 2rem 0 0 0;
+
+}
 }
