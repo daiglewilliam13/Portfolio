@@ -12,7 +12,6 @@ select {
 	padding: 3rem 0 0 0;
 	position: relative;
 	box-sizing:border-box;
-	height: 100vh;
 }
 
 #contact-header p:first-child {
