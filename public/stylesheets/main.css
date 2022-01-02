@@ -33,8 +33,6 @@ button:hover,
 footer {
 	background-color: #9f81cd;
 	height: 3rem;
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	text-align: center;
 	border-top: 3px solid rgb(241, 152, 175);
