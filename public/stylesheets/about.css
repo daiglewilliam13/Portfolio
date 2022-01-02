@@ -76,6 +76,7 @@
 	#triangle-card-wrapper {
 		margin: 2rem 0 0 0;
 		padding: 0 2rem;
+		flex-wrap: nowrap;
 	}
 
 	.triangle-card {
@@ -115,7 +116,7 @@
 		font-weight: 300;
 	}
 
-	#about hr {
+	hr {
 		width: 55%;
 		margin: 1rem auto;
 	}
