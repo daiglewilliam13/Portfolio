@@ -258,7 +258,7 @@ const sendMessage = () => {
 			topic: topic.value,
 		};
 
-		postMessage('https://portfolio-mqlie.run-us-west2.goorm.io/sendmessage', data);
+		postMessage('https://www.daigleportfolio.me/sendmessage', data);
 		name.value = '';
 		email.value = '';
 		contactMessage.value = '';
