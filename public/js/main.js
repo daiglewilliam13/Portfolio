@@ -268,6 +268,8 @@ const sendMessage = () => {
 	}
 };
 
+
+
 function createRipple(event) {
 	const button = event.currentTarget;
 	const circle = document.createElement('span');
@@ -294,7 +296,8 @@ for (const button of buttons) {
 	button.addEventListener('click', createRipple);
 }
 
-
+const sendMessageButton = document.getElementById('send-message-button');
+sendMessageButton.addEventListener('click', sendMessage);
 
 window.onload = function () {
 	animatePosition(displayCards, 0);
