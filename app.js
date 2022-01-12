@@ -9,14 +9,14 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const Achievement = require("./models/achievement.js");
 
-// const corsOptions = {
-//   "origin": "*",
-//   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   "preflightContinue": false,
-//   "optionsSuccessStatus": 204,
-//   "allowedHeaders": ["Content-Type"]
-// }
-// app.use(cors(corsOptions))
+const corsOptions = {
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204,
+  "allowedHeaders": ["Content-Type"]
+}
+app.use(cors(corsOptions))
 app.use(express.static(__dirname + '/public')); 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
