@@ -16,7 +16,7 @@ const corsOptions = {
   "optionsSuccessStatus": 204,
   "allowedHeaders": ["Content-Type"]
 }
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.static(__dirname + '/public')); 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
