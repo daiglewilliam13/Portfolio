@@ -9,7 +9,10 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const Achievement = require("./models/achievement.js");
 
-app.use(cors());
+app.use(cors({
+	origin: ['https://portfolio-mqlie.run-us-west2.goorm.io/'],
+	credentials: true
+}));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
