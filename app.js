@@ -9,7 +9,8 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const Achievement = require("./models/achievement.js");
 
-app.use(cors({origin: '*'}));
+app.use(cors());
+app.options('*', cors());
 app.use(express.static(__dirname + '/public')); 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
