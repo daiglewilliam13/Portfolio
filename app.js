@@ -10,6 +10,11 @@ const cors = require('cors')
 const Achievement = require("./models/achievement.js");
 
 app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://achievement-list.herokuapp.com/"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use(express.static(__dirname + '/public')); 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
