@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const Achievement = require("./models/achievement.js");
 
+app.use(cors());
 app.use(express.static(__dirname + '/public')); 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +45,7 @@ app.post('/samples/achievement/save', (req, res)=>{
 	res.send(achievement);
 })
 
-app.get('/samples/achievement/other', cors(), (req, res)=>{
+app.get('/samples/achievement/other', (req, res)=>{
 	Achievement.aggregate([{$sample: {size:1}}]).then(achievements => res.send(achievements));
 })
 
