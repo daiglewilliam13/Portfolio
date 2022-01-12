@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express'); 
 const app = express();
+const port = process.env.PORT;
 const path = require('path'); 
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -92,6 +93,6 @@ app.post('/sendmessage', (req, res) => {
 	});
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(port || 3000, () => {
 	console.log(`App Started and listening on ${port}`); 
 });
