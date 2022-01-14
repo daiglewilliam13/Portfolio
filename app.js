@@ -10,7 +10,7 @@ const cors = require('cors')
 const Achievement = require("./models/achievement.js");
 
 const corsOptions = {
-  "origin": "https://portfolio-mqlie.run-us-west2.goorm.io/",
+  "origin": "*",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "preflightContinue": false,
   "optionsSuccessStatus": 204,
