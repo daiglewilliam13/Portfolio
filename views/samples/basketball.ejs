@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Basketball API Sample</title>
+		<link rel="stylesheet" href="../../stylesheets/basketball.css" />
+	</head>
+	<body>
+		<div id="display-wrapper">
+			<div id="header">
+				<h1>
+					Pick a team and year to view a games box score:
+				</h1>
+			</div>
+			<form>
+				<select name="season" id="season-select">
+					<%seasons.forEach((season)=>{%>
+					<option value="<%=season%>"><%=season%></option>
+					<%})%>
+				</select>
+				<select name="team" id="team-select">
+					<%teams.forEach((team)=>{%>
+					<option value="<%=team.id%>"><%=team.name%></option>
+					<%})%>
+				</select>
+				<button type="submit" id="find-team">Find Team Stats</button>
+			</form>
+			<div id="response-wrapper"></div>
+			<div id="box-score-wrapper"></div>
+			<div id="leader-wrapper">
+			Leaders:
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="../../js/basketball.js"></script>
+	</body>
+</html>
