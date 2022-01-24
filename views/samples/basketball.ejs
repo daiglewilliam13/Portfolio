@@ -30,7 +30,30 @@
 			<div id="response-wrapper"></div>
 			<div id="box-score-wrapper"></div>
 			<div id="leader-wrapper">
-			Leaders:
+			<table>
+			<thead>
+			<tr>
+			<th colspan="3" id="v-team"></th>
+			<th colspan="3" id="h-team"></th>
+			</tr>
+			<tr>
+			<th>POINTS</th>
+			<th>REBOUNDS</th>
+			<th>ASSISTS</th>
+			<th>POINTS</th>
+			<th>REBOUNDS</th>
+			<th>ASSISTS</th>
+			</thead>
+			</tr>
+			<tr id="player-name-display">
+			<td id="v-team-points"></td>
+			<td id="v-team-rebounds"></td>
+			<td id="v-team-assists"></td>
+			<td id="h-team-points"></td>
+			<td id="h-team-rebounds"></td>
+			<td id="h-team-assists"></td>
+			</tr>
+			</table>
 			</div>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

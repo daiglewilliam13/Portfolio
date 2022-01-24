@@ -127,25 +127,41 @@ const createColHeaders = (colHeaders) => {
 	});
 };
 
+const getStat = (player) =>{
+  for (const key of Object.keys(player)) {
+    if (key != 'name' && key != 'playerId') return key;
+  }
+}
+
+const getCellId = (stat, index) => {
+	const team = {
+		0:'v-team-',
+		1:'h-team-'
+	}
+	return team[index]+stat
+}
 const displayLeaders = (leaders) => { //sorry
-	leaderWrap.innerHTML = '';
+	let playerNames = Array.from(document.getElementById('player-name-display').childNodes);
+	playerNames.forEach(el=>{
+		el.innerHTML='';
+	})
 	let vTeam = Object.keys(leaders[0])[0];
 	let hTeam = Object.keys(leaders[1])[0];
-	console.log(hTeam)
-	console.log(vTeam);
-	for (const value of Object.values(leaders)){
-		console.log(Object.values(value))
-	}
-	// let vDiv = document.createElement('div');
-	// 	let statP = document.createElement('p');
-	// 	if (key != 'playerId') {
-	// 	let text = document.createTextNode(team[key]);
-	// 	statP.innerHTML = key + ': ';
-	// 	statP.appendChild(text);
-	// 	vDiv.appendChild(statP);
-	// 	}
-	// 	vDiv.appendChild(document.createElement('hr'));
-	// 	leaderWrap.appendChild(vDiv);
+	const vHeader = document.getElementById('v-team');
+	const hHeader = document.getElementById('h-team');
+	vHeader.innerText = vTeam;
+	hHeader.innerText = hTeam;
+	leaders.forEach((team,index) =>{
+  	let currentTeam = Object.values(team)[0]
+  	for (const player of currentTeam) {
+    	let stat = getStat(player)
+		let cellLoc = getCellId(stat, index);
+		let cell = document.getElementById(cellLoc);
+		cell.innerHTML +=  player.name + ": " + player[stat] + "<br>";
+  }
+})
+
+	
 };
 
 findButton.addEventListener('click', displayGames);
