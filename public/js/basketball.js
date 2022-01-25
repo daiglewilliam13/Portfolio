@@ -89,11 +89,13 @@ const getGameStats = async (e) => {
 		url: 'https://portfolio-mqlie.run-us-west2.goorm.io/samples/basketball/games/stats/' + id,
 	};
 	let stats = await axios.request(statOptions).then((response) => {
-		displayGameStats(response.data.api.game[0]);
+		const gameDetails = response.data.details.api.game[0];
+		const gameStats = response.data.stats.api.game[0];
+		displayGameDetails(gameDetails);
 	});
 };
 
-const displayGameStats = (game) => {
+const displayGameDetails = (game) => {
 	table = document.createElement('table');
 	tr = table.insertRow(-1);
 	const colHeaders = ['TEAM', 'Q1', 'Q2', 'Q3', 'Q4', 'TOTAL'];
