@@ -74,7 +74,7 @@ app.get('/samples/basketball/games/stats/:id', async (req, res) => {
   	url: 'https://api-nba-v1.p.rapidapi.com/statistics/games/gameId/'+req.params.id,
   	headers: {
     'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
-    'x-rapidapi-key': 'b55617370bmshd2ab868abb490ddp1c6242jsnb68a440d6524'
+    'x-rapidapi-key': process.env.BB_API_KEY,
   }
 	};
 	const gameStats = await axios.request(statOptions).then((response)=>{
