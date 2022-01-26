@@ -21,7 +21,7 @@ const displayGames = async (e) => {
 	let teamName = team.options[team.selectedIndex].text;
 	const gameOptions = {
 		method: 'POST',
-		url: 'https://portfolio-mqlie.run-us-west2.goorm.io/samples/basketball/games',
+		url: 'https://www.daigleportfolio.me/samples/basketball/games',
 		data: { season: `${season.value}`, team: `${team.value}` },
 	};
 	let gamesArr = await axios
@@ -81,7 +81,7 @@ const getGameStats = async (e) => {
 	const id = parent.lastChild.innerText;
 	const statOptions = {
 		method: 'get',
-		url: 'https://portfolio-mqlie.run-us-west2.goorm.io/samples/basketball/games/stats/' + id,
+		url: 'https://www.daigleportfolio.me/samples/basketball/games/stats/' + id,
 	};
 	let stats = await axios.request(statOptions).then((response) => {
 		const gameDetails = response.data.details.api.game[0];
@@ -134,7 +134,7 @@ const replacePlayerName = async (el) =>{
 	},200)
 	const playerOptions = {
 		method: 'GET',
-		url: 'https://portfolio-mqlie.run-us-west2.goorm.io/samples/basketball/players/' + playerId
+		url: 'https://www.daigleportfolio.me/samples/basketball/players/' + playerId
 	}
 	const playerName = await axios.request(playerOptions).then((response)=>{
 		const name = response.data.api.players[0].firstName + " " + response.data.api.players[0].lastName;
