@@ -56,7 +56,9 @@ const displayGames = async (e) => {
 		tabCell3 = tr.insertCell(-1);
 		tabCell4 = tr.insertCell(-1);
 		tabCell2.innerHTML = date.toLocaleDateString(dateOptions);
+		tabCell2.classList.add('game-date');
 		tabCell3.innerHTML = winner == teamName ? 'WIN' : 'LOSS';
+		tabCell3.classList.add('game-result');
 		tabCell4.innerHTML = game.gameId;
 		tabCell4.classList.add('id');
 	});

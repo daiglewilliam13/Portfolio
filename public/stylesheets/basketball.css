@@ -1,6 +1,28 @@
 body, html {
 	height: 100%;
 	margin: 0;
+	background-color: #edebff;
+}
+
+body, select, button {
+	font-family: Arial, sans-serif;
+}
+
+
+select, button {
+	font-size: 1.5rem;
+	background-color: #b6abff;
+	color: white;
+	transition: .2s;
+	border: 1px solid grey;
+	margin: 0;
+	vertical-align:top;
+	height: 2rem;
+}
+
+button:hover {
+	background-color: #272161;
+	transition: .2s;
 }
 
 div#display-wrapper{
@@ -8,38 +30,62 @@ div#display-wrapper{
 	height: 100%;
 }
 #header h1 {
-	color: green;
 	margin: 0;
 	padding: 2rem 0;
 }
+#stat-table th,
+#box-score-wrapper th {
+	text-align: left;
+}
 
-tr:focus {
-	background-color:lightgray;
+
+th, td {
+	border-bottom: 1px solid gray;
 }
 
 th {
 	position: sticky;
-	top: 2px;
-	background-color: white;
-	border: 1px solid black;
+	top: 0;
+	height: 2rem;
+	background-color: #b6abff;
+	min-width: 5rem;
 }
 
 table {
 	width: 100%;
+	border-collapse: collapse;
+
 
 }
+
 
 tr:hover {
-	background-color:lightgray;
+	background-color:#998ff2;
 	cursor: pointer;
+	color: white;
+	transition: .1s;
 }
 
+td {
+	height:2rem;
+}
 .id {
 	display:none;
 }
 
+.playerId {
+	font-weight: bold;
+	text-decoration: underline;
+	min-width: 10rem;
+}
+
 .active {
-	background-color:lightgray;
+	background-color:#998ff2;
+	color: white;
+}
+
+.game-result, .game-date {
+	text-align: center;
 }
 
 p {
@@ -51,24 +97,33 @@ p:first-letter {
 }
 
 div#response-wrapper {
-	border: 1px solid black;
 	max-height: 50%;
 	overflow-y:scroll;
 	display: none;
 }
 
-div#box-score-wrapper {
-	border: 1px solid black;
+div#box-score-wrapper, 
+div#response-wrapper,
+div#stat-table {
+	margin: .5rem 0;
 }
-
+div#player-stat-wrapper {
+	height: 70%;
+}
 div#stat-table{
 	overflow:scroll;
+	height: 100%;
 }
-table {
-	width: 100%;
+
+div#stat-table th{
+	z-index: 2;
 }
-th.playerId {
-	width: 20%;
+
+td.playerId {
+	position: sticky;
+	left: 0;
+	background-color: #b6abff;
+	z-index: 1;
 }
 
 .loader,
