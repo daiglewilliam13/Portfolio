@@ -156,6 +156,13 @@ const displayGameDetails = (game) => {
 	table = document.createElement('table');
 	tr = table.insertRow(-1);
 	const colHeaders = ['TEAM', 'Q1', 'Q2', 'Q3', 'Q4', 'TOTAL'];
+	const linescoreLength = game.hTeam.score.linescore.length;
+	if(linescoreLength > 4){
+		const numOfOt = linescoreLength - 4;
+		for (let i=0; i<numOfOt; i++){
+			colHeaders.splice((colHeaders.length-1),0, "OT")
+		}
+	};
 	const vTeamData = [game.vTeam.nickname, ...game.vTeam.score.linescore, game.vTeam.score.points];
 	const hTeamData = [game.hTeam.nickname, ...game.hTeam.score.linescore, game.hTeam.score.points];
 	const leaders = [

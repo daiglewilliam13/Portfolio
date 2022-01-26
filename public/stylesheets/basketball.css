@@ -12,7 +12,6 @@ body, select, button {
 select, button {
 	font-size: 1.5rem;
 	background-color: #b6abff;
-	color: white;
 	transition: .2s;
 	border: 1px solid grey;
 	margin: 0;
@@ -23,6 +22,7 @@ select, button {
 button:hover {
 	background-color: #272161;
 	transition: .2s;
+	color: white;
 }
 
 div#display-wrapper{
@@ -88,6 +88,9 @@ td {
 	text-align: center;
 }
 
+.gameId, #stat-table th:last-child {
+	display: none;
+}
 p {
 	margin:0;
 }
