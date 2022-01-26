@@ -61,6 +61,16 @@ div#box-score-wrapper {
 	border: 1px solid black;
 }
 
+div#stat-table{
+	overflow:scroll;
+}
+table {
+	width: 100%;
+}
+th.playerId {
+	width: 20%;
+}
+
 .loader,
 .loader:after {
   border-radius: 50%;

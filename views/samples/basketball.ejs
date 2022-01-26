@@ -30,33 +30,44 @@
 			<div id="response-wrapper"></div>
 			<div id="box-score-wrapper"></div>
 			<div id="leader-wrapper">
-			<h3>
-			Game Leaders	
-			</h3>
-			<table>
-			<thead>
-			<tr>
-			<th colspan="3" id="v-team"></th>
-			<th colspan="3" id="h-team"></th>
-			</tr>
-			<tr>
-			<th>POINTS</th>
-			<th>REBOUNDS</th>
-			<th>ASSISTS</th>
-			<th>POINTS</th>
-			<th>REBOUNDS</th>
-			<th>ASSISTS</th>
-			</thead>
-			</tr>
-			<tr id="player-name-display">
-			<td id="v-team-points"></td>
-			<td id="v-team-rebounds"></td>
-			<td id="v-team-assists"></td>
-			<td id="h-team-points"></td>
-			<td id="h-team-rebounds"></td>
-			<td id="h-team-assists"></td>
-			</tr>
-			</table>
+				<h3>
+					Game Leaders
+				</h3>
+				<table>
+					<thead>
+						<tr>
+							<th colspan="3" id="v-team"></th>
+							<th colspan="3" id="h-team"></th>
+						</tr>
+						<tr>
+							<th>POINTS</th>
+							<th>REBOUNDS</th>
+							<th>ASSISTS</th>
+							<th>POINTS</th>
+							<th>REBOUNDS</th>
+							<th>ASSISTS</th>
+						</tr>
+					</thead>
+					<tr id="player-name-display">
+						<td id="v-team-points"></td>
+						<td id="v-team-rebounds"></td>
+						<td id="v-team-assists"></td>
+						<td id="h-team-points"></td>
+						<td id="h-team-rebounds"></td>
+						<td id="h-team-assists"></td>
+					</tr>
+				</table>
+			</div>
+			<div id="player-stat-wrapper">
+				<h3>
+					Individual Player Stats
+				</h3>
+				<p>
+				Please note: Player Names are not immediately available because the API requires a callback for EVERY ID. I love you but this is a free API. Click the player if you want to know who it is. 
+				</p>
+			<div id="stat-table">
+				
+			</div>
 			</div>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

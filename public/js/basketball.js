@@ -33,16 +33,11 @@ const displayGames = async (e) => {
 		.catch(function (error) {
 			console.error(error);
 		});
-	const columns = ['VS', 'DATE', 'OUTCOME'];
+	const colHeaders = ['VS', 'DATE', 'OUTCOME'];
 	table = document.createElement('table');
-	tr = table.insertRow(-1);
-	columns.forEach((el) => {
-		th = document.createElement('th');
-		th.innerHTML = el;
-		tr.appendChild(th);
-	});
+	createColHeaders(colHeaders);
 	gamesArr.forEach((game) => {
-		//get data and create table-- TODO: create table function
+		//get data and create table--
 		let homeScore = game.hTeam.score.points;
 		let awayScore = game.vTeam.score.points;
 		let homeTeam = game.hTeam.fullName;
@@ -90,21 +85,81 @@ const getGameStats = async (e) => {
 	};
 	let stats = await axios.request(statOptions).then((response) => {
 		const gameDetails = response.data.details.api.game[0];
-		const gameStats = response.data.stats.api.game[0];
+		const playerStats = response.data.stats.api.statistics;
+		const teamId = {
+			[gameDetails.hTeam.teamId]: gameDetails.hTeam.shortName,
+			[gameDetails.vTeam.teamId]: gameDetails.vTeam.shortName,
+		};
 		displayGameDetails(gameDetails);
+		displayPlayerStats(playerStats, teamId);
 	});
 };
+const displayPlayerStats = (stats, teamId) => {
+	table = document.createElement('table');
+	const statWrap = document.getElementById('stat-table');
+	let statNames = stats[0];
+	const colHeaders = [];
+	statWrap.innerHTML = '';
+	for (key of Object.keys(statNames)) {
+		colHeaders.unshift(key);
+	}
+	createColHeaders(colHeaders);
+	stats.forEach((player) => {
+		tr = table.insertRow(-1);
+		for ([key,value] of Object.entries(player)) {
+			tabCell1 = tr.insertCell(0);
+			tabCell1.classList.add(`${key}`);
+			tabCell1.setAttribute('colspan', '1');
+			value ? (tabCell1.textContent = value) : (tabCell1.textContent = 'N/A');
+		}
+	}); 
+	statWrap.appendChild(table);
+	//change teamId to shortName
+	const teams = Array.from(document.getElementsByClassName('teamId'));  
+	teams.forEach((cell)=>{ 
+		const name = getValue(cell, teamId);
+		cell.textContent=name;
+	})
+	const players = Array.from(document.getElementsByClassName('playerId'));
+	players.forEach((cell)=>{
+		cell.addEventListener('click', replacePlayerName)
+	})
+};
 
+const replacePlayerName = async (el) =>{
+	const playerId = el.target.textContent;
+	el.target.textContent = '';
+	const loader = setInterval(()=>{
+		el.target.textContent += '.';
+	},200)
+	const playerOptions = {
+		method: 'GET',
+		url: 'https://portfolio-mqlie.run-us-west2.goorm.io/samples/basketball/players/' + playerId
+	}
+	const playerName = await axios.request(playerOptions).then((response)=>{
+		const name = response.data.api.players[0].firstName + " " + response.data.api.players[0].lastName;
+		return name;
+	}).catch((err)=>{
+		el.target.textContent=err;
+	})
+	clearInterval(loader);
+	el.target.textContent = playerName;
+	el.target.removeEventListener('click', replacePlayerName);
+}
+
+const getValue = (el, obj) =>{
+	return obj[el.textContent];
+} 
 const displayGameDetails = (game) => {
 	table = document.createElement('table');
 	tr = table.insertRow(-1);
 	const colHeaders = ['TEAM', 'Q1', 'Q2', 'Q3', 'Q4', 'TOTAL'];
 	const vTeamData = [game.vTeam.nickname, ...game.vTeam.score.linescore, game.vTeam.score.points];
 	const hTeamData = [game.hTeam.nickname, ...game.hTeam.score.linescore, game.hTeam.score.points];
-	const leaders =[
-	{ [game.vTeam.nickname]: game.vTeam.leaders },	
-	{ [game.hTeam.nickname]: game.hTeam.leaders }
-	]
+	const leaders = [
+		{ [game.vTeam.nickname]: game.vTeam.leaders },
+		{ [game.hTeam.nickname]: game.hTeam.leaders },
+	];
 
 	const boxScore = [vTeamData, hTeamData];
 	createColHeaders(colHeaders);
@@ -129,41 +184,41 @@ const createColHeaders = (colHeaders) => {
 	});
 };
 
-const getStat = (player) =>{
-  for (const key of Object.keys(player)) {
-    if (key != 'name' && key != 'playerId') return key;
-  }
-}
+const getStat = (player) => {
+	for (const key of Object.keys(player)) {
+		if (key != 'name' && key != 'playerId') return key;
+	}
+};
 
 const getCellId = (stat, index) => {
 	const team = {
-		0:'v-team-',
-		1:'h-team-'
-	}
-	return team[index]+stat
-}
-const displayLeaders = (leaders) => { //sorry
+		0: 'v-team-',
+		1: 'h-team-',
+	};
+	return team[index] + stat;
+};
+
+const displayLeaders = (leaders) => {
+	//sorry
 	let playerNames = Array.from(document.getElementById('player-name-display').childNodes);
-	playerNames.forEach(el=>{
-		el.innerHTML='';
-	})
+	playerNames.forEach((el) => {
+		el.innerHTML = '';
+	});
 	let vTeam = Object.keys(leaders[0])[0];
 	let hTeam = Object.keys(leaders[1])[0];
 	const vHeader = document.getElementById('v-team');
 	const hHeader = document.getElementById('h-team');
 	vHeader.innerText = vTeam;
 	hHeader.innerText = hTeam;
-	leaders.forEach((team,index) =>{
-  	let currentTeam = Object.values(team)[0]
-  	for (const player of currentTeam) {
-    	let stat = getStat(player)
-		let cellLoc = getCellId(stat, index);
-		let cell = document.getElementById(cellLoc);
-		cell.innerHTML +=  player.name + ": " + player[stat] + "<br>";
-  }
-})
-
-	
+	leaders.forEach((team, index) => {
+		let currentTeam = Object.values(team)[0];
+		for (const player of currentTeam) {
+			let stat = getStat(player);
+			let cellLoc = getCellId(stat, index);
+			let cell = document.getElementById(cellLoc);
+			cell.innerHTML += player.name + ': ' + player[stat] + '<br>';
+		}
+	});
 };
 
 findButton.addEventListener('click', displayGames);

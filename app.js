@@ -46,8 +46,7 @@ app.post('/samples/basketball/games', async (req, res) => {
 	console.log(req.body);
 	const gameOptions = {
 		method: 'GET',
-		url:
-			'https://api-nba-v1.p.rapidapi.com/games/teamId/'+req.body.team,
+		url: 'https://api-nba-v1.p.rapidapi.com/games/teamId/' + req.body.team,
 		headers: {
 			'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
 			'x-rapidapi-key': process.env.BB_API_KEY,
@@ -62,32 +61,32 @@ app.post('/samples/basketball/games', async (req, res) => {
 app.get('/samples/basketball/games/stats/:id', async (req, res) => {
 	const detailOptions = {
 		method: 'GET',
-		url: 'https://api-nba-v1.p.rapidapi.com/gameDetails/'+req.params.id,
+		url: 'https://api-nba-v1.p.rapidapi.com/gameDetails/' + req.params.id,
 		headers: {
 			'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
 			'x-rapidapi-key': process.env.BB_API_KEY,
 		},
 	};
-	
+
 	const statOptions = {
-  	method: 'GET',
-  	url: 'https://api-nba-v1.p.rapidapi.com/statistics/games/gameId/'+req.params.id,
-  	headers: {
-    'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
-    'x-rapidapi-key': process.env.BB_API_KEY,
-  }
+		method: 'GET',
+		url: 'https://api-nba-v1.p.rapidapi.com/statistics/players/gameId/' + req.params.id,
+		headers: {
+			'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
+			'x-rapidapi-key': process.env.BB_API_KEY,
+		},
 	};
-	const gameStats = await axios.request(statOptions).then((response)=>{
+	const playerStats = await axios.request(statOptions).then((response) => {
 		return response.data;
-	})
+	});
 	const gameDetails = await axios.request(detailOptions).then((response) => {
 		return response.data;
 	});
-	
+
 	let gameInfo = {
 		details: gameDetails,
-		stats: gameStats,
-	}
+		stats: playerStats,
+	};
 	res.send(gameInfo);
 });
 
@@ -132,6 +131,21 @@ app.get('/samples/basketball', async (req, res) => {
 			console.error(error);
 		});
 	res.render('samples/basketball', { seasons: seasonArr, teams: teamArr });
+});
+
+app.get('/samples/basketball/players/:id', async (req, res) => {
+	const playerId = req.params.id;
+	const apiOptions = {
+		method: 'GET',
+		url: 'https://api-nba-v1.p.rapidapi.com/players/playerId/'+playerId,
+		headers: {
+			'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
+			'x-rapidapi-key': process.env.BB_API_KEY
+		},
+	};
+	const getPlayer = axios.request(apiOptions).then((response)=>{
+		res.send(response.data);
+	})
 });
 
 app.post('/samples/achievement/save', (req, res) => {
