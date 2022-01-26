@@ -189,7 +189,7 @@
 }
 
 img.work-image {
-	object-fit: contain;
+	object-fit: cover;
 	height: 100%;
 	width: 100%;
 }
@@ -343,7 +343,7 @@ img.work-image {
 	}
 
 	img.work-image {
-		object-fit: contain;
+		object-fit: cover;
 		height: 100%;
 		width: 100%;
 	}
