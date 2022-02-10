@@ -26,6 +26,7 @@ export const checkGuess = (guess, correct) => {
     let corStr = correct.join('');
 	guessStr = guessStr.toLowerCase();
     corStr = corStr.toLowerCase();
+	console.log(guessStr)
     if (guessStr === corStr) {
         last5.forEach((input) => {
             input.classList.add('direct-hit');
@@ -33,8 +34,8 @@ export const checkGuess = (guess, correct) => {
         return true;
     }
     last5.forEach((input, index) => {
-        if (correct.includes(input.value)) {
-            if (index === correct.indexOf(input.value)) {
+        if (correct.includes(input.value.toLowerCase())) {
+            if (index === correct.indexOf(input.value.toLowerCase())) {
                 input.classList.add('direct-hit')
             } else {
                 input.classList.add('side-hit')
