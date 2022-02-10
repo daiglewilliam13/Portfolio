@@ -1,6 +1,7 @@
 # Dependency directories
 node_modules/
 achievement-list/
+views/samples/5word
 
 # Optional npm cache directory
 .npm

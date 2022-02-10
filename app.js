@@ -189,6 +189,10 @@ app.get('/samples/achievement/delete/:id', (req, res) => {
 	});
 });
 
+app.get('/samples/5word', (req,res)=>{
+	res.render('samples/5word');
+})
+
 app.post('/sendmessage', (req, res) => {
 	res.send(req.body);
 	const transporter = nodemailer.createTransport({
