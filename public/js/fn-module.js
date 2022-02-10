@@ -22,8 +22,10 @@ export const getLast5Inputs = () => {
 }
 export const checkGuess = (guess, correct) => {
     const last5 = getLast5Inputs();
-    const guessStr = guess.join('');
-    const corStr = correct.join('');
+    let guessStr = guess.join('');
+    let corStr = correct.join('');
+	guessStr = guessStr.toLowerCase();
+    corStr = corStr.toLowerCase();
     if (guessStr === corStr) {
         last5.forEach((input) => {
             input.classList.add('direct-hit');
