@@ -18,3 +18,7 @@ input.side-hit {
 input.no-hit {
     background-color: black;
 }
+
+input {
+    text-align:center;
+}

@@ -3,40 +3,31 @@
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _React = React,
-    useState = _React.useState;
+    useState = _React.useState,
+    useEffect = _React.useEffect;
 
+import Letterbox from './Letterbox.js';
 
-var LikeButton = function LikeButton() {
-    var handleClick = function handleClick(e) {
-        e.preventDefault();
-        setIsLiked(function () {
-            return !isLiked;
-        });
-    };
-
-    var _useState = useState(false),
+var InputContainer = function InputContainer(props) {
+    var _useState = useState([]),
         _useState2 = _slicedToArray(_useState, 2),
-        isLiked = _useState2[0],
-        setIsLiked = _useState2[1];
+        boxArr = _useState2[0],
+        setBoxArr = _useState2[1];
 
+    useEffect(function () {
+        setBoxArr(props.statusArr);
+    }, [props.statusArr]);
     return React.createElement(
         React.Fragment,
         null,
         React.createElement(
-            'button',
-            { onClick: handleClick },
-            'click'
-        ),
-        isLiked ? React.createElement(
-            'p',
-            null,
-            'liked'
-        ) : React.createElement(
-            'p',
-            null,
-            'not liked'
+            'div',
+            { className: 'input-wrapper' },
+            boxArr.map(function (box) {
+                return React.createElement(Letterbox, { letterStatus: box });
+            })
         )
     );
 };
 
-export default LikeButton;
+export default InputContainer;

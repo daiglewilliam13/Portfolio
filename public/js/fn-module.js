@@ -10,7 +10,7 @@ export const getGuessWord = () => {
 }
 export const disableInput = (input) => {
     let oldInputs = Array.from(document.getElementsByClassName('letter-input'));
-    oldInputs = oldInputs.splice(0, oldInputs.length - 5);
+    oldInputs = oldInputs.slice(Math.max(oldInputs.length-5, 0));
     oldInputs.forEach((input) => {
         input.setAttribute('disabled', "");
     })
@@ -20,40 +20,17 @@ export const getLast5Inputs = () => {
     newInputs = newInputs.splice(newInputs.length - 5, newInputs.length)
     return newInputs;
 }
-export const checkGuess = (guess, correct) => {
-    const last5 = getLast5Inputs();
-    let guessStr = guess.join('');
-    let corStr = correct.join('');
-	guessStr = guessStr.toLowerCase();
-    corStr = corStr.toLowerCase();
-	console.log(guessStr)
-    if (guessStr === corStr) {
-        last5.forEach((input) => {
-            input.classList.add('direct-hit');
-        })
-        return true;
-    }
-    last5.forEach((input, index) => {
-        if (correct.includes(input.value.toLowerCase())) {
-            if (index === correct.indexOf(input.value.toLowerCase())) {
-                input.classList.add('direct-hit')
-            } else {
-                input.classList.add('side-hit')
-            }
-        } else {
-            input.classList.add('no-hit');
-        }
-    })
-    return false;
-}
+
 export const resetInputs = () => {
-    const inputs = Array.from(document.getElementsByClassName('letter-input'));
-    inputs.forEach(input => {
-        input.classList.remove('direct-hit');
-        input.classList.remove('side-hit');
-        input.classList.remove('no-hit');
-        input.value = '';
+    const inputs = Array.from(document.querySelectorAll('input'));
+    inputs.forEach((input)=>{
         input.removeAttribute('disabled');
+        input.value='';
     })
 }
 
+export const moveToNext = (e) => {
+        const prev = e.target.previousElementSibling;
+        const next = e.target.nextElementSibling
+        e.keyCode === 8 || e.keyCode=== 37  ? prev?.focus() : next?.focus();
+}
