@@ -39,11 +39,13 @@ var Main = function Main() {
 
     var checkGuess = function checkGuess(correct) {
         var guessArr = getGuessWord();
-        var guessStr = guessArr.join('').toLowerCase();
-        var corStr = correct.join('').toLowerCase();
+        var guessStr = guessArr.join('');
+        var corStr = correct.join('');
+        guessStr = guessStr.toLowerCase();
+        corStr = corStr.toLowerCase();
         var newStatusArr = guessArr.map(function (el, index) {
-            if (correct.includes(el)) {
-                return el === correct[index] ? 'd' : 's';
+            if (correct.includes(el.toLowerCase())) {
+                return el.toLowerCase() === correct[index] ? 'd' : 's';
             } else {
                 return 'n';
             }
