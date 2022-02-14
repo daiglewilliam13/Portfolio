@@ -37,5 +37,5 @@ export const moveToNext = (e) => {
 export const moveToPrev = (e) => {
     const prev = e.target.previousElementSibling;
     const key = e.key;
-    if(key==='Backspace' || key==='Delete') prev?.focus();
+    if(key==='Backspace' || key==='Delete') {prev?.focus(); prev?.select();}
 }
