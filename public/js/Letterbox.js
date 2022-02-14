@@ -1,6 +1,6 @@
 'use strict';
 
-import { moveToNext } from "./fn-module.js";
+import { moveToNext, moveToPrev } from "./fn-module.js";
 var Letterbox = function Letterbox(props) {
     var getClass = function getClass(letter) {
         return {
@@ -13,7 +13,8 @@ var Letterbox = function Letterbox(props) {
     var classList = "letter-input " + getClass(props.letterStatus);
     var disabled = props.letterStatus === 'a' ? false : true;
     return React.createElement('input', { type: 'text',
-        onKeyUp: moveToNext,
+        onChange: moveToNext,
+        onKeyUp: moveToPrev,
         className: classList,
         maxLength: 1,
         disabled: disabled
