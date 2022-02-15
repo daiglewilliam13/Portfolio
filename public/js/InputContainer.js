@@ -23,8 +23,9 @@ var InputContainer = function InputContainer(props) {
         React.createElement(
             'div',
             { className: 'input-wrapper' },
-            boxArr.map(function (box) {
-                return React.createElement(Letterbox, { letterStatus: box });
+            boxArr.map(function (box, index) {
+
+                return React.createElement(Letterbox, { letterStatus: box, autoFocus: index === 0, last: index === boxArr.length - 1 });
             })
         )
     );

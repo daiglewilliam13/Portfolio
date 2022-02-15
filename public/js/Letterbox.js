@@ -10,14 +10,15 @@ var Letterbox = function Letterbox(props) {
             'n': 'no-hit'
         }[letter];
     };
-    var classList = "letter-input " + getClass(props.letterStatus);
+    var classList = props.last + " letter-input " + getClass(props.letterStatus);
     var disabled = props.letterStatus === 'a' ? false : true;
     return React.createElement('input', { type: 'text',
         onChange: moveToNext,
         onKeyUp: moveToPrev,
         className: classList,
         maxLength: 1,
-        disabled: disabled
+        disabled: disabled,
+        autoFocus: props.autoFocus
     });
 };
 

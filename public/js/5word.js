@@ -37,6 +37,11 @@ var Main = function Main() {
         letterCount = _useState8[0],
         setLetterCount = _useState8[1];
 
+    var focusFirst = function focusFirst() {
+        var last5 = getLast5Inputs();
+        last5[0].focus();
+    };
+
     var checkGuess = function checkGuess(correct) {
         var guessArr = getGuessWord();
         var guessStr = guessArr.join('');
@@ -84,7 +89,9 @@ var Main = function Main() {
         correctWord = Array.from(wordArr[Math.floor(Math.random() * wordArr.length)]);
     };
     useEffect(function () {
-        if (inputList.length === 0) addInputs(dStatusArr);
+        if (inputList.length === 0) {
+            addInputs(dStatusArr);
+        }
         console.log(correctWord);
     });
     return React.createElement(
