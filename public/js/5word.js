@@ -96,8 +96,9 @@ var Main = function Main() {
         if (inputList.length === 0) {
             addInputs(dStatusArr);
         }
+		console.log(correctWord);
         setHasLoaded(true);
-    },[]);
+    }, []);
     return hasLoaded ? React.createElement(
         React.Fragment,
         null,
@@ -105,20 +106,24 @@ var Main = function Main() {
             return React.createElement(InputContainer, { number: letterCount, statusArr: input, handleClick: handleClick });
         }),
         React.createElement(
-            'button',
-            { onClick: handleClick, disabled: hasWon },
-            'GO!'
-        ),
-        React.createElement(
-            'p',
-            null,
-            'Attempt # ',
-            count
-        ),
-        hasWon ? React.createElement(Win, { reload: reload }) : React.createElement(
-            'p',
-            null,
-            'Keep Trying!'
+            'div',
+            { className: 'submit-wrapper' },
+            React.createElement(
+                'button',
+                { onClick: handleClick, disabled: hasWon, className: 'submit-button' },
+                'GO!'
+            ),
+            React.createElement(
+                'p',
+                null,
+                'Attempt # ',
+                count
+            ),
+            hasWon ? React.createElement(Win, { reload: reload }) : React.createElement(
+                'p',
+                null,
+                'Keep Trying!'
+            )
         )
     ) : React.createElement(
         'p',
@@ -127,5 +132,5 @@ var Main = function Main() {
     );
 };
 
-var domContainer = document.querySelector('#main-wrapper');
+var domContainer = document.querySelector('#game-wrapper');
 ReactDOM.render(React.createElement(Main, null), domContainer);

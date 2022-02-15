@@ -13,19 +13,26 @@
 		<link rel="stylesheet" href="/stylesheets/5word.css" />
 	</head>
 	<body>
+		<div class="main-container">
+			
 		<!--[if lt IE 7]>
 			<p class="browsehappy">
 				You are using an <strong>outdated</strong> browser. Please
 				<a href="#">upgrade your browser</a> to improve your experience.
 			</p>
 		<![endif]-->
-		<h1>5Word. Guess the 5 letter word!</h1>
+		<h1>5Word: Guess the 5 letter word!</h1>
+		<h3><span class="grn">Green:</span> correct letter in correct position</h3>
+		<h3><span class="yel">Yellow:</span> correct letter in wrong position</h3>
+		<h3><span class="blk">Black:</span> wrong letter</h3>
+		<h3 id="good-luck">Good Luck!</h3>
 		<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
 		<script
 			crossorigin
 			src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
 		></script>
-		<div id="main-wrapper"></div>
+		<div id="game-wrapper"></div>
 		<script src="/js/5word.js" type="module"></script>
+		</div>
 	</body>
 </html>

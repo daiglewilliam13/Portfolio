@@ -1,24 +1,132 @@
-input.letter-input {
-    width: 2rem;
-    font-size:2rem;
+body, button, input {
+	font-family: Helvitica, sans-serif;
 }
 
-button.submit-button {
-    font-size:2rem;
+body {
+	background-color:#383838;
+	color: #c4c2c2;
+	text-shadow: 0px 0px 3px black;
 }
+input.letter-input {
+	padding: .5rem;
+	width: 2.5rem;
+    font-size:2.5rem;
+	margin: 5px;
+	background-color: #c4c2c2;
+	border: none;
+}
+
+input.letter-input:focus {
+	outline: 5px solid #e66300;
+	transition: .2s;
+}
+
+button {
+    font-size:2rem;
+	margin: 1rem auto;
+	display:block;
+	background-color:#e66300;
+	border: none;
+	border-radius: 3px;
+	color:white;
+	padding: .5rem;
+	width: 10rem;
+	text-shadow: 0px 0px 5px black;
+	transition: .15s;
+}
+
+button:hover {
+	cursor:pointer;
+	background-color: #ab4a00;
+	transition: .2s;
+}
+
+button:disabled,
+button[disabled]{
+	background-color: #ebd3b7;
+	color: lightgray;
+}
+
+button[disabled]:hover{
+	cursor: not-allowed;
+}
+
 
 input.direct-hit {
-    background-color:green;
+    background-color:#71e3a8;
+	color:black;
+
+}
+.grn {
+	color:#71e3a8;
 }
 
 input.side-hit {
-    background-color:yellow;
+    background-color:#f7ed92;
+	color:black;
+}
+.yel {
+color: #f7ed92;	
 }
 
 input.no-hit {
     background-color: black;
+	color:grey;
+}
+
+.blk {
+	color:black;
+	text-shadow: 0px 0px 3px lightgray;
 }
 
 input {
     text-align:center;
 }
+div.submit-wrapper{
+	display: flex;
+	width:100%;
+	justify-content:center;
+	flex-wrap: wrap;
+}
+
+.submit-wrapper p {
+	width:100%;
+	text-align: center;
+	margin: .2rem;
+}
+div.input-wrapper {
+	display:flex;
+	margin:0 10%;;
+	justify-content:center;
+	width:100%;
+}
+div#game-wrapper {
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	flex-wrap:wrap;
+	margin: 1rem auto;
+}
+
+div.main-container {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+
+.main-container h1, .main-container h3 {
+	width:100%;
+	text-align:center;
+	
+}
+
+h3 {
+	margin: 0;
+}
+
+h3#good-luck {
+	font-style: italic;
+	font-weight: 300;
+}
+
+
