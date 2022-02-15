@@ -96,7 +96,6 @@ var Main = function Main() {
         if (inputList.length === 0) {
             addInputs(dStatusArr);
         }
-		console.log(correctWord);
         setHasLoaded(true);
     }, []);
     return hasLoaded ? React.createElement(
