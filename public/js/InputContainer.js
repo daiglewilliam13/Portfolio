@@ -14,6 +14,7 @@ var InputContainer = function InputContainer(props) {
         boxArr = _useState2[0],
         setBoxArr = _useState2[1];
 
+    var handleClick = props.handleClick;
     useEffect(function () {
         setBoxArr(props.statusArr);
     }, [props.statusArr]);
@@ -25,7 +26,7 @@ var InputContainer = function InputContainer(props) {
             { className: 'input-wrapper' },
             boxArr.map(function (box, index) {
 
-                return React.createElement(Letterbox, { letterStatus: box, autoFocus: index === 0, last: index === boxArr.length - 1 });
+                return React.createElement(Letterbox, { letterStatus: box, autoFocus: index === 0, last: index === boxArr.length - 1, handleClick: handleClick });
             })
         )
     );

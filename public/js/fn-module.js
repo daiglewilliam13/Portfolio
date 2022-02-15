@@ -31,11 +31,17 @@ export const resetInputs = () => {
 
 export const moveToNext = (e) => {
         const next = e.target.nextElementSibling
-        if(e.target.value !== '') next?.focus();
+        if(e.target.value !== '' || e.key === 'ArrowRight') next?.focus();
 }
 
-export const moveToPrev = (e) => {
+export const moveToPrev = (e, funct) => {
     const prev = e.target.previousElementSibling;
     const key = e.key;
-    if(key==='Backspace' || key==='Delete') {prev?.focus(); prev?.select();}
+    if(key==='Backspace') {prev?.focus(); prev?.select()};
+}
+
+export const checkEnter = (e, funct) => {
+    const key = e.key;
+    const isLast = e.target.classList.contains('true') ? true : false;
+    if (isLast && key === 'Enter') funct();
 }

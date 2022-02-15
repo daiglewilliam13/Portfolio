@@ -13,7 +13,11 @@ var _React = React,
     useEffect = _React.useEffect;
 
 
-var wordArr = data;
+var noPlurals = function noPlurals(arr) {
+    if (arr[4] === 's') return false;
+    return true;
+};
+var wordArr = data.filter(noPlurals);
 var correctWord = Array.from(wordArr[Math.floor(Math.random() * wordArr.length)]);
 var dStatusArr = ['a', 'a', 'a', 'a', 'a'];
 var Main = function Main() {
@@ -37,10 +41,10 @@ var Main = function Main() {
         letterCount = _useState8[0],
         setLetterCount = _useState8[1];
 
-    var focusFirst = function focusFirst() {
-        var last5 = getLast5Inputs();
-        last5[0].focus();
-    };
+    var _useState9 = useState(false),
+        _useState10 = _slicedToArray(_useState9, 2),
+        hasLoaded = _useState10[0],
+        setHasLoaded = _useState10[1];
 
     var checkGuess = function checkGuess(correct) {
         var guessArr = getGuessWord();
@@ -92,13 +96,13 @@ var Main = function Main() {
         if (inputList.length === 0) {
             addInputs(dStatusArr);
         }
-        console.log(correctWord);
-    });
-    return React.createElement(
+        setHasLoaded(true);
+    },[]);
+    return hasLoaded ? React.createElement(
         React.Fragment,
         null,
         inputList.map(function (input) {
-            return React.createElement(InputContainer, { number: letterCount, statusArr: input });
+            return React.createElement(InputContainer, { number: letterCount, statusArr: input, handleClick: handleClick });
         }),
         React.createElement(
             'button',
@@ -116,6 +120,10 @@ var Main = function Main() {
             null,
             'Keep Trying!'
         )
+    ) : React.createElement(
+        'p',
+        null,
+        'loading game...'
     );
 };
 
