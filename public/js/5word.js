@@ -129,7 +129,7 @@ var Main = function Main() {
             validEntry ? React.createElement('p', null) : React.createElement(
                 'p',
                 { id: 'invalid-display' },
-                'Not In Disctionary'
+                'Not In Dictionary'
             ),
             React.createElement(
                 'button',
