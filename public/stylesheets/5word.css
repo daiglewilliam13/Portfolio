@@ -2,6 +2,10 @@ body, button, input {
 	font-family: Helvitica, sans-serif;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
 	background-color:#383838;
 	color: #c4c2c2;
@@ -112,6 +116,7 @@ div#game-wrapper {
 	justify-content:center;
 	flex-wrap:wrap;
 	margin: 1rem auto;
+
 }
 
 div.main-container {
@@ -133,6 +138,28 @@ h3 {
 h3#good-luck {
 	font-style: italic;
 	font-weight: 300;
+}
+
+p#invalid-display{
+    color: red;
+    font-size: 2rem;
+    margin: 1rem 0;
+    animation: jiggle 2 forwards .1s;
+}
+
+@keyframes jiggle {
+    0% {
+        padding-left: 0;
+        padding-right:0;
+    } 25% {
+        padding-right: 1.5rem;
+    } 50% {
+        padding-right: 0;
+    } 75% {
+        padding-left: 1.5rem;
+    } 100% {
+        padding-left: 0;
+    }
 }
 
 @keyframes flip {

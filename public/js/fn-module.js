@@ -1,12 +1,17 @@
 
-export const getGuessWord = () => {
+export const getGuessWord = (reqStr) => {
     const last5 = getLast5Inputs();
     let guessWord = [];
     last5.forEach(input => {
         guessWord.push(input.value)
     })
-    return guessWord;
-
+    if(!reqStr){
+        return guessWord;
+    } else {
+        guessWord = guessWord.join('')
+        guessWord = guessWord.toLowerCase();
+        return guessWord;
+    }
 }
 export const disableInput = (input) => {
     let oldInputs = Array.from(document.getElementsByClassName('letter-input'));

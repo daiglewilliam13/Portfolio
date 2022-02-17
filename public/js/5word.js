@@ -46,34 +46,53 @@ var Main = function Main() {
         hasLoaded = _useState10[0],
         setHasLoaded = _useState10[1];
 
+    var _useState11 = useState(true),
+        _useState12 = _slicedToArray(_useState11, 2),
+        validEntry = _useState12[0],
+        setValidEntry = _useState12[1];
+
+    var isValidEntry = function isValidEntry() {
+        var word = getGuessWord(true);
+        return data.includes(word) && word.length === 5 ? true : false;
+    };
+
     var checkGuess = function checkGuess(correct) {
         var guessArr = getGuessWord();
         var guessStr = guessArr.join('');
         var corStr = correct.join('');
         guessStr = guessStr.toLowerCase();
         corStr = corStr.toLowerCase();
-        var newStatusArr = guessArr.map(function (el, index) {
-            if (correct.includes(el.toLowerCase())) {
-                return el.toLowerCase() === correct[index] ? 'd' : 's';
-            } else {
-                return 'n';
-            }
-        });
-        var newInputList = inputList.slice(0, inputList.length - 1);
-        newInputList.push(newStatusArr);
-        setInputList(newInputList);
-        if (corStr === guessStr) return true;
-        return false;
+        var isWord = isValidEntry();
+        if (isWord) {
+            var newStatusArr = guessArr.map(function (el, index) {
+                if (correct.includes(el.toLowerCase())) {
+                    return el.toLowerCase() === correct[index] ? 'd' : 's';
+                } else {
+                    return 'n';
+                }
+            });
+            var newInputList = inputList.slice(0, inputList.length - 1);
+            newInputList.push(newStatusArr);
+            setInputList(newInputList);
+            if (corStr === guessStr) return true;
+            return false;
+        } else {
+            console.log('invalid entry');
+        }
     };
 
     var handleClick = function handleClick(e) {
+        var isWord = isValidEntry();
         var won = checkGuess(correctWord);
+        setValidEntry(isWord);
         setHasWon(won);
-        if (!won) {
-            addInputs(dStatusArr);
-            setCount(function (count) {
-                return count + 1;
-            });
+        if (isWord) {
+            if (!won) {
+                addInputs(dStatusArr);
+                setCount(function (count) {
+                    return count + 1;
+                });
+            }
         }
     };
 
@@ -97,7 +116,7 @@ var Main = function Main() {
             addInputs(dStatusArr);
         }
         setHasLoaded(true);
-    }, []);
+    }, [validEntry]);
     return hasLoaded ? React.createElement(
         React.Fragment,
         null,
@@ -107,9 +126,14 @@ var Main = function Main() {
         React.createElement(
             'div',
             { className: 'submit-wrapper' },
+            validEntry ? React.createElement('p', null) : React.createElement(
+                'p',
+                { id: 'invalid-display' },
+                'Not In Disctionary'
+            ),
             React.createElement(
                 'button',
-                { onClick: handleClick, disabled: hasWon, className: 'submit-button' },
+                { onClick: handleClick, disabled: hasWon },
                 'GO!'
             ),
             React.createElement(
