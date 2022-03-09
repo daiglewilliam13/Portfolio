@@ -193,6 +193,15 @@ app.get('/samples/5word', (req,res)=>{
 	res.render('samples/5word');
 })
 
+app.get('/samples/contact-list/', (req,res)=>{
+	res.send({
+		name: 'Mickey',
+		email: 'something@example.com',
+		phone: '5555555555',
+		id: 1
+	})
+})
+
 app.post('/sendmessage', (req, res) => {
 	res.send(req.body);
 	const transporter = nodemailer.createTransport({
