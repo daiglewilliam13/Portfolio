@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const axios = require('axios');
 const Achievement = require('./models/achievement.js');
+const Contact = require('./models/contact.js');
 
 const corsOptions = {
 	origin: '*',
@@ -194,12 +195,32 @@ app.get('/samples/5word', (req,res)=>{
 })
 
 app.get('/samples/contact-list/', (req,res)=>{
-	res.send({
-		name: 'Mickey',
-		email: 'something@example.com',
-		phone: '5555555555',
-		id: 1
+	Contact.find({}).then((contacts)=>{
+		res.send(contacts)})
+	
+})
+
+app.post('/samples/contact-list/add', (req,res)=>{
+	const newContact = new Contact({
+		name: req.body.name,
+		phone: req.body.phone,
+		email: req.body.email,
+		_id: mongoose.Types.ObjectId()
 	})
+	newContact.save().then((newObject)=>{res.send(newObject)})
+})
+
+app.post('/samples/contact-list/update', (req, res)=>{
+	const id = req.body._id;
+	const update ={
+			name:req.body.name,
+			email:req.body.email,
+			phone:req.body.phone
+			};
+	Contact.findOneAndUpdate(
+		{_id:id},update, {
+			returnOriginal:false,
+		}).then((updatedContact)=>{res.send(updatedContact)})
 })
 
 app.post('/sendmessage', (req, res) => {
