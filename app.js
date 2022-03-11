@@ -223,6 +223,14 @@ app.post('/samples/contact-list/update', (req, res)=>{
 		}).then((updatedContact)=>{res.send(updatedContact)})
 })
 
+app.get('/samples/contact-list/delete/:id', (req, res)=>{
+	const contactId = req.params.id;
+	Contact.deleteOne({_id:contactId})
+	.then((response)=>{
+		res.send({message: 'OK', _id: contactId})
+	})
+})
+
 app.post('/sendmessage', (req, res) => {
 	res.send(req.body);
 	const transporter = nodemailer.createTransport({
