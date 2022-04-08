@@ -64,7 +64,6 @@ span.ripple {
 
 /* MOBILE STYLE */
 #navbar {
-	width: 100%;
 	background-color: #9f81cd;
 	height: 3rem;
 	position: sticky;
@@ -109,10 +108,15 @@ span.ripple {
 	}
 	
 	#navbar {
-		padding: 0 10%;
+		padding: 0 15%;
 	}
 
 	.nav-button {
 		font-size: 1.5rem;
 	}
+	section#about{ 
+		padding: 0 15%;
+	}
+	
+	
 }

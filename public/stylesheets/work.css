@@ -114,7 +114,6 @@
 }
 
 #work-wrapper {
-	height: 65vh;
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -132,7 +131,7 @@
 #display-card-wrapper {
 	z-index: 1;
 	position: absolute;
-	overflow-y: scroll;
+	overflow:hidden;
 }
 #show-all-selector {
 	cursor: pointer;
