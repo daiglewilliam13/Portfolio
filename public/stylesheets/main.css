@@ -110,8 +110,8 @@ span.ripple {
 		padding: 0 0.5rem;
 	}
 	
-	#navbar {
-		margin: 0 auto;
+	#navbar ul{
+		justify-content:center;
 	}
 
 	.nav-button {
