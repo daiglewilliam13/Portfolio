@@ -264,6 +264,10 @@ app.post('/sendmessage', (req, res) => {
 	});
 });
 
+app.get('/resume', (req, res)=>{
+	res.render('/resume/resume.html')
+})
+
 app.listen(port || 3000, () => {
 	console.log(`App Started and listening on ${port}`);
 });
