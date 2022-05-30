@@ -88,7 +88,6 @@ span.ripple {
 	list-style: none;
 	padding: 0 0.2rem;
 	transition: 0.3s;
-	font-size: .5rem;
 }
 
 .nav-button {
@@ -96,7 +95,7 @@ span.ripple {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
 	color: white;
-	font-size: 1.2rem;
+	font-size: .8rem;
 	transition: 0.2s;
 }
 .nav-button-active {
