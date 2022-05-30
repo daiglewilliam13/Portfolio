@@ -81,13 +81,14 @@ span.ripple {
 	height: 100%;
 	text-align: center;
 	justify-content: start;
-	font-size: .5rem;
+
 }
 
 #navbar ul li {
 	list-style: none;
 	padding: 0 0.2rem;
 	transition: 0.3s;
+	font-size: .5rem;
 }
 
 .nav-button {
