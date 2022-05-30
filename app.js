@@ -265,7 +265,7 @@ app.post('/sendmessage', (req, res) => {
 });
 
 app.get('/resume', (req, res)=>{
-	res.render('/resume/resume.html')
+	res.render('/resume/resume')
 })
 
 app.listen(port || 3000, () => {
