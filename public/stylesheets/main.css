@@ -72,6 +72,7 @@ span.ripple {
 	z-index: 2;
 	border-bottom: 3px solid #f198af;
 	overflow: hidden;
+
 }
 
 #navbar ul {
@@ -79,6 +80,8 @@ span.ripple {
 	margin: auto;
 	height: 100%;
 	text-align: center;
+	justify-content: start;
+	font-size: .8rem;
 }
 
 #navbar ul li {
