@@ -80,7 +80,7 @@ span.ripple {
 	margin: auto;
 	height: 100%;
 	text-align: center;
-	justify-content: start;
+	padding: 0;
 
 }
 
