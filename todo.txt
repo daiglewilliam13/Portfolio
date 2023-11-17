@@ -1,0 +1,28 @@
+
+2 - combbine skills sections with samples
+    -lose buttons
+    -samples should just be animated grid in the side box
+        for mobile {
+            -examples should slide down from underneath selected skill
+        }
+
+    new skill list: 
+        -Javascript
+        -CSS/FrontEnd
+        -ReactJS
+        -DB/CRUD
+        -API Endpoints
+        -Node.js/Express
+    new sites to make: 
+        -denist office clone
+        -twitter clone
+        -tsumicon
+        -art gallery
+        -pizza restaurant (difficult)
+4 - fix samples 
+    -ditch all the samples 
+    -create fake websites that are modern and look cool
+    -link tsumicon
+5 - get domain to look professional
+6 - order business cards - what the hell
+7 - write text for site-type cards. add pictures? design something

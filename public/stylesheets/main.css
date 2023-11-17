@@ -32,7 +32,6 @@ button:hover,
 
 footer {
 	background-color: #9f81cd;
-	height: 3rem;
 	width: 100%;
 	text-align: center;
 	border-top: 3px solid rgb(241, 152, 175);
@@ -40,7 +39,7 @@ footer {
 
 footer p {
 	margin: 0;
-	padding: 0.5rem 0;
+	padding: 2rem 0;
 	position: relative;
 	bottom: 0;
 }
@@ -65,12 +64,10 @@ span.ripple {
 /* MOBILE STYLE */
 #navbar {
 	background-color: #9f81cd;
-	height: 3rem;
 	position: sticky;
 	position: -webkit-sticky;
 	top: 0;
 	z-index: 2;
-	border-bottom: 3px solid #f198af;
 	overflow: hidden;
 
 }
@@ -86,40 +83,51 @@ span.ripple {
 
 #navbar ul li {
 	list-style: none;
-	padding: 0 0.2rem;
-	transition: 0.3s;
+	transition: 250ms;
 }
 
 .nav-button {
+	background-size: 100% 200%;
+	background-image: linear-gradient(to bottom, #9f81cd 50%, #f198af 50%);
+	padding: 1rem 0.5rem;
 	border: none;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
 	color: white;
-	font-size: .8rem;
-	transition: 0.2s;
+	transition: 250ms ease-in-out;
 }
+
+.nav-button:hover {
+	color: black;
+	background-position: 0 100%;
+}
+
 .nav-button-active {
-	color: #f198af;
-	text-shadow: 0px 0px 1px black;
-	transition: 0.3s;
+	color: black;
+	transition: 0.2s;
+	background-position: 0 100%;
+	border-bottom: 1px solid black;
 }
 
 /* DESKTOP */
 @media screen and (min-width: 685px) {
-	#navbar ul li {
-		padding: 0 0.5rem;
+	.nav-button {
+		padding: 1rem 2rem;
 	}
-	
-	#navbar ul{
-		justify-content:center;
+
+	#navbar ul {
+		justify-content: center;
 	}
 
 	.nav-button {
 		font-size: 1.5rem;
 	}
-	section#about{ 
-		padding: 0 15%;
+
+	section#about {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1500px;
 	}
-	
-	
+
+
 }

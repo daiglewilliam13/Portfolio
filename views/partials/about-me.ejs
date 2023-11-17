@@ -34,96 +34,47 @@
 			</div>
 		</div>
 	</div>
-	<hr />
-	<div id="skill-section">
-		<div id="skill-selection">
-			<div id="dropdown-menu">
-				<div id="skill-list">
-					<div class="skill-li">HTML</div><div class="triangle-li"></div>
-					<div class="skill-li">CSS</div><div class="triangle-li"></div>
-					<div class="skill-li">Javascript</div><div class="triangle-li"></div>
-					<div class="skill-li active-skill">ReactJS</div><div class="triangle-li active-triangle-li"></div>
-					<div class="skill-li">NodeJS</div><div class="triangle-li"></div>
-					<div class="skill-li">Express</div><div class="triangle-li"></div>
-					<div class="skill-li">MORE</div><div class="triangle-li"></div>
-				</div>
+	<div id="site-types-wrapper">
+		<div class="site-card">
+			<div class="site-text">
+				Restaurants
 			</div>
 		</div>
-		<div id="skill-description">
-			<div id="arrow-container">
-				<div id="left-side-arrow"><i class="fas fa-caret-square-left"></i></div>
-				<div id="right-side-arrow"><i class="fas fa-caret-square-right"></i></div>
+		<div class="site-card">
+			<div class="site-text">
+				Small Business
 			</div>
-			<div class="skill-card hidden">
-				<div class="skill-card-header">HTML</div>
-				<div class="skill-card-subtext">
-					The skeletal structure of every page you see. Clean, properly formatted HTML is
-					critical for accessibility and maintainability. Let me help you create websites
-					that screen-readers and other accessibility tools can easily navigate for users.
-				</div>
+		</div>
+		<div class="site-card">
+			<div class="site-text">
+				E-Commerce
 			</div>
-			<div class="skill-card hidden">
-				<div class="skill-card-header">CSS</div>
-				<div class="skill-card-subtext">
-					CSS/SASS ensures visual consisitency and cohesion across any site. Create a
-					look and feel unique to you and your vision.
-				</div>
+		</div>
+		<div class="site-card">
+			<div class="site-text">
+				Photography
 			</div>
-			<div class="skill-card hidden">
-				<div class="skill-card-header">Javascript</div>
-				<div class="skill-card-subtext">
-					The fundamental language behind dynamic websites, Javascript transforms a page
-					from presentation to experience.
-				</div>
-			</div>
-			<div class="skill-card">
-				<div class="skill-card-header">ReactJS</div>
-				<div class="skill-card-subtext">
-					Functional components, hooks, React.createContext, and everything
-					else. Let's explore the possibilities of Single-Page-Applications with the webs
-					hottest library.
-				</div>
-			</div>
-			<div class="skill-card hidden">
-				<div class="skill-card-header">NodeJS</div>
-				<div class="skill-card-subtext">
-					Ever wanted to run Javascript outside of a browser? NodeJS is the perfect
-					environment for you. Deploy an API or Back-end service to serve all of your
-					pages without the need for a Wordpress style CMS
-				</div>
-			</div>
-			<div class="skill-card hidden">
-				<div class="skill-card-header">Express</div>
-				<div class="skill-card-subtext">
-					The Express server framework is meant to work in tandem with NodeJS. Expertly
-					defined routes ensure that your visitors are never lost or thrown into the 404
-					abyss.
-				</div>
-			</div>
-			<div class="skill-card hidden">
-				<div class="skill-card-header">MORE</div>
-				<div class="skill-card-subtext">
-					Here are other technologies I work with:
-					<ul>
-						<li>
-							<span class='highlight'>MongoDB</span> - Set up all your CRUD operations for users, pictures(hosted separately),
-							comments, posts, messages, and more.
-						</li>
-						<li>
-							<span class='highlight'>EJS</span> - template system for building webpages on the server side and then
-							delivered to the client.
-						</li>
-						<li><span class='highlight'>JQuery</span> - Another hot library slowly fading off into the sunset.</li>
-						<li>
-							<span class='highlight'>Wordpress/Wix/Webflow</span> - Quickly build and deploy your small business
-							website.
-						</li>
-						<li>
-							<span class='highlight'>Shopify/StorEnvy/GumRoad</span> - 100% customized shop themes and inventory/drop-shipping management.
-						</li>
-						<li><span class='highlight'>Git/GitHub/Version Conrol</span> - Never lose a backup and never merge into production without approval.</li>
-					</ul>
-				</div>
+		</div>
+	</div>
+	<div id="skill-section">
+		<div id="skill-selector">
+			<ul id="skill-list">
+				<li class="skill-li" id="js">Javascript/Typescript</li>
+				<li class="skill-li" id="fe">CSS/FrontEnd</li>
+				<li class="skill-li" id="react">ReactJS</li>
+				<li class="skill-li" id="db">DB/CRUD Operations</li>
+				<li class="skill-li" id="api">API Endpoints</li>
+				<li class="skill-li" id="node">NodeJS/Express</li>
+			</ul>
+		</div>
+		<div id="sample-container">
+			<div id="position-card-wrapper">
+				<div class="position-card js fe react">card 1 js fe react</div>
+				<div class="position-card db api node">card 2 b api node</div>
+				<div class="position-card db js fe">card 3 db js fe</div>
+				<div class="position-card api node">card 4 api node</div>
+				<div class="position-card js db react api">db react api js</div>
+				<div class="position-card js db node api">db node js</div>
 			</div>
 		</div>
 	</div>

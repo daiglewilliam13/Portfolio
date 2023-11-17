@@ -8,7 +8,7 @@
 
 #about-me-header {
 	text-align: center;
-	margin: 3.5rem 0 0 0;
+	margin: 6rem 0 0 0;
 }
 
 #about-me-header h1 {
@@ -19,7 +19,7 @@
 #triangle-card-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content:center;
+	justify-content: center;
 	width: 100%;
 	box-sizing: border-box;
 	margin: 1rem 0 0 0;
@@ -37,6 +37,7 @@
 .highlight {
 	color: #f198af;
 }
+
 .triangle-down {
 	width: 0;
 	height: 0;
@@ -55,6 +56,7 @@
 	font-size: 2rem;
 	color: white;
 }
+
 .card-header {
 	font-size: 1.2rem;
 }
@@ -66,6 +68,29 @@
 #about hr {
 	width: 55%;
 	margin: 1rem auto;
+}
+
+#site-types-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 5rem;
+	justify-content: center;
+
+}
+
+.site-card {
+	width: 100%;
+	height: 20rem;
+	margin: 10px;
+	background-color: #9f81cd;
+	box-sizing: border-box;
+	transition: 200ms ease-in-out;
+
+}
+
+.site-text {
+	background-color: #9f81cd;
+	height: 100%;
 }
 
 /* DESKTOP */
@@ -90,6 +115,7 @@
 	.highlight {
 		color: #f198af;
 	}
+
 	.triangle-down {
 		width: 0;
 		height: 0;
@@ -108,12 +134,41 @@
 		font-size: 2.5rem;
 		color: white;
 	}
+
 	.card-header {
 		font-size: 1.2rem;
 	}
 
 	.card-subtext {
 		font-weight: 300;
+	}
+
+	.site-card {
+		width: 20rem;
+		--g: 4px;
+		/* the gap */
+		--b: 12px;
+		/* border thickness*/
+		--c: #f198af;
+		/* the color */
+
+
+		padding: calc(var(--g) + var(--b));
+		--_c: #0000 0 25%, var(--c) 0 50%;
+		--_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+		--_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+		background:
+			var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
+			var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
+		background-size: 200% var(--b), var(--b) 200%;
+		cursor: pointer;
+		filter: grayscale(50%);
+		transition: 250ms ease-in-out;
+	}
+
+	.site-card:hover {
+		--_p: 75%;
+		filter: grayscale(0%);
 	}
 
 	hr {
