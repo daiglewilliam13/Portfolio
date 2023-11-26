@@ -67,7 +67,7 @@ span.ripple {
 	position: sticky;
 	position: -webkit-sticky;
 	top: 0;
-	z-index: 2;
+	z-index: 999;
 	overflow: hidden;
 
 }
@@ -123,11 +123,6 @@ span.ripple {
 		font-size: 1.5rem;
 	}
 
-	section#about {
-		width: 90%;
-		margin: 0 auto;
-		max-width: 1500px;
-	}
 
 
 }
